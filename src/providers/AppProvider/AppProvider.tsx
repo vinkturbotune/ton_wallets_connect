@@ -8,7 +8,7 @@ export const AppContext = createContext<AppContextType | null>(null);
 export const AppProvider: FC<{ config: ConfigType; children: ReactNode }> = ({ config, children }) => {
   // const { beginCell, toNano } = require('@ton/ton');
   const [connectedWalletAndwalletInfo, setConnectedWalletAndwalletInfo] = useState<ConnectedWallet | null>(null);
-  const { telegramUserId, webApp, user } = useTelegram();
+  const { telegramUserId, user } = useTelegram();
   const [tonConnectUI] = useTonConnectUI();
 
   tonConnectUI.onStatusChange((walletAndwalletInfo) => {

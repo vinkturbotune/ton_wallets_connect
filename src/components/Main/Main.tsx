@@ -10,7 +10,7 @@ function Main() {
   const rawAddress = useTonAddress(false);
   const wallet = useTonWallet();
   const { telegramUserId } = useTelegram();
-
+  console.log('wallet', wallet);
   //  TON          UQATTFgrygPAdSwoSJquE2P0U1Ubj9cp_KMRIbNDWbl_xdTs
   //  TON wallet   UQBkL9us8uvfGLinEkr-LRcEA8DmpzSnn_164AM4S11O918N
   //  TON keeper   0QBzpBuGT0bXSB51YqHvmkvAXPj88k4N-zvXxZfK5k3Xdpu7
@@ -41,31 +41,35 @@ function Main() {
         <TonConnectButton />
         <br />
 
-        <Typography>User-friendly address:</Typography>
-        <Typography sx={{ fontSize: '12px' }}>{userFriendlyAddress}</Typography>
-        <br />
-        <Typography>Raw address:</Typography>
-        <Typography sx={{ fontSize: '12px' }}>{rawAddress}</Typography>
-        <br />
+        {wallet && (
+          <>
+            <Typography>User-friendly address:</Typography>
+            <Typography sx={{ fontSize: '12px' }}>{userFriendlyAddress}</Typography>
+            <br />
+            <Typography>Raw address:</Typography>
+            <Typography sx={{ fontSize: '12px' }}>{rawAddress}</Typography>
+            <br />
 
-        <Typography>Connected wallet: {wallet && 'name' in wallet && wallet.name}</Typography>
-        <Typography>Device: {wallet?.device.appName}</Typography>
-        <br />
+            <Typography>Connected wallet: {'name' in wallet && wallet.name}</Typography>
+            <Typography>Device: {wallet.device.appName}</Typography>
+            <br />
 
-        <Box>
-          <Button
-            variant="contained"
-            color="secondary"
-            onClick={async (e) => {
-              e.preventDefault();
-              if (tonConnectUI.connected) {
-                await tonConnectUI.disconnect();
-              }
-            }}
-          >
-            Disconnect wallet
-          </Button>
-        </Box>
+            <Box>
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={async (e) => {
+                  e.preventDefault();
+                  if (tonConnectUI.connected) {
+                    await tonConnectUI.disconnect();
+                  }
+                }}
+              >
+                Disconnect wallet
+              </Button>
+            </Box>
+          </>
+        )}
       </Box>
     </Box>
   );
