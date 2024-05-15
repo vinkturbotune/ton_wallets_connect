@@ -1,5 +1,6 @@
 {
   "name": "ton_wallets_connect",
+  "homepage": "https://vinkturbotune.github.io/ton_wallets_connect/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
