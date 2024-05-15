@@ -13,6 +13,9 @@ function App() {
       <TonConnectUIProvider
         uiPreferences={{ theme: THEME.DARK }}
         manifestUrl={`https://vinkturbotune.github.io/ton_wallets_connect/tonconnect-manifest.json`}
+        actionsConfiguration={{
+          twaReturnUrl: 'https://t.me/MyFirstTestTONConnector_Bot/MyUUID',
+        }}
       >
         <AppProvider config={config}>
           <Main></Main>

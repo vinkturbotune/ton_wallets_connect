@@ -17,7 +17,7 @@ export const AppProvider: FC<{ config: ConfigType; children: ReactNode }> = ({ c
 
   console.log('telegramUserId', telegramUserId);
   console.log('user', user);
-  console.log('webApp', webApp);
+  // console.log('webApp', webApp);
 
   // const sendDepositRequest = async () => {
   //   // await tonConnectUI.openSingleWalletModal('telegram-wallet');
