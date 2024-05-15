@@ -12,7 +12,7 @@ function App() {
     <TelegramProvider>
       <TonConnectUIProvider
         uiPreferences={{ theme: THEME.DARK }}
-        manifestUrl={`https://jetlix.space/tonconnect-manifest.json`}
+        manifestUrl={`https://vinkturbotune.github.io/ton_wallets_connect/tonconnect-manifest.json`}
       >
         <AppProvider config={config}>
           <Main></Main>
